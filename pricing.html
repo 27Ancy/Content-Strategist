@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Payment | Verified WFH</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #111827;
+  padding: 30px;
+  border-radius: 20px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h1 { font-size: 22px; }
+
+.price {
+  font-size: 26px;
+  margin: 15px 0;
+  color: #22c55e;
+}
+
+.badge {
+  font-size: 12px;
+  background: #22c55e;
+  color: black;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.features {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.features p { margin: 6px 0; }
+
+.button-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover { transform: scale(1.05); }
+
+.upi { background: #16a34a; }
+.paypal { background: #2563eb; }
+.qr { background: #9333ea; }
+
+.section {
+  margin-top: 15px;
+}
+
+.section img {
+  width: 150px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.footer {
+  font-size: 12px;
+  margin-top: 15px;
+  opacity: 0.7;
+}
+
+.trust {
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="badge">🔥 Limited Offer</div>
+  <h1>Unlock Premium ⭐</h1>
+  <p>Secure access to Verified WFH system</p>
+
+  <div class="price">Only ₹99</div>
+
+  <div class="features">
+    <p>✅ Verified Remote Jobs</p>
+    <p>✅ ATS Resume Builder</p>
+    <p>✅ Interview System</p>
+    <p>✅ Project Datasets</p>
+    <p>✅ Scam Awareness</p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="button-row">
+    <button class="btn upi" onclick="toggleUPI()">UPI</button>
+    <button class="btn paypal" onclick="togglePayPal()">PayPal</button>
+    <button class="btn qr" onclick="toggleQR()">QR</button>
+  </div>
+
+  <!-- UPI Section -->
+  <div id="upiBox" class="section" style="display:none;">
+    <p>Pay using UPI or scan QR</p>
+
+    <button class="btn upi" onclick="window.open('upi://pay?pa=ancysnehaa-1@okicic&pn=Ancy%20Sneha%20Arokiarajam=99&cu=INR')">
+      Open UPI App
+    </button>
+
+    <img src="YOUR_QR_IMAGE" alt="UPI QR">
+
+    <p style="font-size:12px;opacity:0.7;">
+      Works best on mobile (GPay / PhonePe / Paytm)
+    </p>
+  </div>
+
+  <!-- PayPal Section -->
+  <div id="paypalBox" class="section" style="display:none;">
+    <p>Pay securely using PayPal</p>
+
+    <form action="https://www.paypal.com/ncp/payment/UUB3GXCX5M9ES" method="post" target="_blank">
+      <input type="submit" value="Pay with PayPal"
+      style="background:#FFD140;color:black;font-weight:bold;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;">
+    </form>
+  </div>
+
+  <!-- QR Only Section -->
+  <div id="qrBox" class="section" style="display:none;">
+    <p>Scan & Pay</p>
+    <img src="YOUR_QR_IMAGE" alt="QR Code">
+  </div>
+
+  <div class="trust">
+    🔒 Secure Payment • ⚡ Instant Access • 💯 Trusted
+  </div>
+
+  <div class="footer">
+    Powered by Secure Payment Gateways
+  </div>
+
+</div>
+
+<script>
+function toggleUPI() {
+  const upi = document.getElementById('upiBox');
+  upi.style.display = upi.style.display === 'none' ? 'block' : 'none';
+
+  document.getElementById('paypalBox').style.display = 'none';
+  document.getElementById('qrBox').style.display = 'none';
+}
+
+function togglePayPal() {
+  const pp = document.getElementById('paypalBox');
+  pp.style.display = pp.style.display === 'none' ? 'block' : 'none';
+
+  document.getElementById('upiBox').style.display = 'none';
+  document.getElementById('qrBox').style.display = 'none';
+}
+
+function toggleQR() {
+  const qr = document.getElementById('qrBox');
+  qr.style.display = qr.style.display === 'none' ? 'block' : 'none';
+
+  document.getElementById('upiBox').style.display = 'none';
+  document.getElementById('paypalBox').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
